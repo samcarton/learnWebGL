@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Grid Life 01 - Sam Carton</title>
+		<style>
+			body {
+				margin: 0px;
+				padding: 30px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<h1 style="margin:0px">Grid Life 01</h1>
+		<p><a href="http://samcarton.com">by Sam Carton</a></p>
+		<form id="paramForm">
+			Tick Time (ms, >= 50): <input type="text" name="tickTime" value="100"></br>
+			Random Activation(0-1): <input type="text" name="activation" value="0.1"></br>
+			<input type="button" onclick="setParams()" value="Set Parameters">
+		</form>
+		</br>
+		<button onclick="manualAdvance()">Increment Tick</button></br></br>
+		<button onclick="start()">Start</button>
+		<button onclick="stop()">Stop</button>
+		<p id="counter">Tick: 0</p>
+		<div id="container"></div>
+		<script src="https://raw.github.com/mrdoob/three.js/r58/build/three.min.js"></script>
+		<script src="gridLife.js"></script>
+				
+		
+	</body>
+</html>
