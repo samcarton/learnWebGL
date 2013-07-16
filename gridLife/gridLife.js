@@ -50,6 +50,7 @@ for(var i = 0; i< gridWidth; i++)
 var gridLength = gridHeight*gridWidth;
 var x = 0, y = 0;
 var black = true; // for alternating colour 
+var cellGeom = new THREE.PlaneGeometry(cellSize,cellSize);
 for(var i = 0; i<gridLength;i++)
 {
 	if (black)
@@ -63,7 +64,7 @@ for(var i = 0; i<gridLength;i++)
 		black = true;
 	}
 	// create a new plane mesh for this cell, using the given color for the material
-	grid[x][y] = new THREE.Mesh(new THREE.PlaneGeometry(cellSize,cellSize), new THREE.MeshBasicMaterial({color:col}));
+	grid[x][y] = new THREE.Mesh(cellGeom, new THREE.MeshBasicMaterial({color:col}));
 	grid[x][y].position.x = x*cellSize+cellSize/2;
 	grid[x][y].position.y = y*cellSize+cellSize/2;	
 	grid[x][y].visible = false;
@@ -95,6 +96,7 @@ var bgPlane = new THREE.Mesh(
 		color:bgColor}));
 bgPlane.position.x = cellSize*gridWidth/2;
 bgPlane.position.y = cellSize*gridHeight/2;
+bgPlane.position.z = -1;
 scene.add(bgPlane);
 
 // a couple of simple Life entities to test (need to start with an empty grid).
